@@ -5,6 +5,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Operator implements Callable<String> {
     ConcurrentLinkedQueue<Integer> queue;
+    private final int WAIT = 3000;
 
     public Operator(ConcurrentLinkedQueue<Integer> queue) {
         this.queue = queue;
@@ -15,7 +16,7 @@ public class Operator implements Callable<String> {
 
         while (true){
             try {
-                Thread.currentThread().sleep(3000);
+                Thread.currentThread().sleep(WAIT);
             } catch (InterruptedException e){
                 System.out.println(e.getMessage());
             }

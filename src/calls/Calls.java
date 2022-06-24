@@ -4,6 +4,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 public class Calls extends Thread{
     ConcurrentLinkedQueue<Integer> queue;
+    private final int WAIT = 1000;
 
     public Calls(ConcurrentLinkedQueue<Integer> queue) {
         this.queue = queue;
@@ -18,7 +19,7 @@ public class Calls extends Thread{
                 queue.add(count);
             }
             try {
-                Thread.sleep(1000);
+                Thread.sleep(WAIT);
             } catch (InterruptedException e){
                 System.out.println(e.getMessage());
             }
