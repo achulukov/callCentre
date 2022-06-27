@@ -22,9 +22,10 @@ public class Operator implements Callable<String> {
             }
             if (queue.size() == 0) return "Все звонки обработаны";
 
-            int client = queue.poll();
+            Integer client = queue.poll();
 
-            System.out.println("Клиент номер " + client +  " - обработан");
+            if (client != null) System.out.println("Клиент номер " + client +  " - обработан");
+
         }
     }
 }
